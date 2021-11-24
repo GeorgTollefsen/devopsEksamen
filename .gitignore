@@ -17,6 +17,7 @@
 /.idea
 **./.idea
 **./idea
+.idea/**
 
 # AWS User-specific
 .idea/**/aws.xml

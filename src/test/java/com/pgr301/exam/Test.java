@@ -9,6 +9,6 @@ public class Test {
     public void create(){
         //tester at man starter i 0 når man oppretter en ny konto
         Account x = new Account();
-        Assertions.assertEquals("1", x.getBalance().toString());
+        Assertions.assertEquals("0", x.getBalance().toString());
     }
 }
