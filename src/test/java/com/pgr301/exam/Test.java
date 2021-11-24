@@ -11,6 +11,6 @@ public class Test {
     @org.junit.jupiter.api.Test
     public void create(){
         int x = 1;
-        org.junit.jupiter.api.Assertions.assertTrue(x==1);
+        org.junit.jupiter.api.Assertions.assertTrue(x==2);
     }
 }
