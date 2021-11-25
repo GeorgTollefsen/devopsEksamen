@@ -14,6 +14,7 @@ jobs:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_REGION: eu-west-1
+      tf_actions_working_dir: './infra'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -30,7 +31,6 @@ jobs:
         env:
           tf_actions_version: 0.12.13
           tf_actions_subcommand: 'init'
-          tf_actions_working_dir: './infra'
           tf_actions_comment: true
 
       - name: Terraform Validate
@@ -76,7 +76,6 @@ jobs:
 #        run: terraform apply -auto-approve
         uses: hashicorp/terraform-github-actions/apply@v0.4.0
         env:
-          tf_actions_working_dir: './infra'
           AWS_ACCESS_KEY_ID:  ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
