@@ -59,12 +59,11 @@
 			<version>5.7.2</version>
 			<scope>test</scope>
 		</dependency>
-		<!--		<dependency>-->
-<!--			<groupId>org.testng</groupId>-->
-<!--			<artifactId>testng</artifactId>-->
-<!--			<version>0.0.1-SNAPSHOT</version>-->
-<!--			<scope>test</scope>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-influx</artifactId>
+			<version>1.5.5</version>
+		</dependency>
 	</dependencies>
 
 	<build>

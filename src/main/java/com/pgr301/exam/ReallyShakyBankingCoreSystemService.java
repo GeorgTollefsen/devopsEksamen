@@ -2,12 +2,23 @@ package com.pgr301.exam;
 
 import com.pgr301.exam.model.Account;
 import com.pgr301.exam.model.Transaction;
+import io.micrometer.core.annotation.Timed;
+import io.micrometer.core.instrument.*;
+import io.micrometer.core.instrument.composite.CompositeMeterRegistry;
+import io.micrometer.core.instrument.simple.SimpleMeterRegistry;
+import io.micrometer.influx.InfluxMeterRegistry;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StopWatch;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.awt.desktop.SystemSleepEvent;
 import java.math.BigDecimal;
+import java.sql.Time;
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 import static java.math.BigDecimal.valueOf;
@@ -24,28 +35,38 @@ import static java.util.Optional.ofNullable;
 class ReallyShakyBankingCoreSystemService implements BankingCoreSystmeService {
 
     private Map<String, Account> theBank = new HashMap();
+    static long counter;
+
 
     @Override
     public void transfer(Transaction tx, String fromAccount, String toAccount) {
+        long startTimer = System.currentTimeMillis();
+
+
         randomizedWait(2000);
         randomizeExceptionOrPanic(0.7f);
         Account from = getOrCreateAccount(fromAccount);
         Account to = getOrCreateAccount(toAccount);
         from.setBalance(from.getBalance().subtract(valueOf(tx.getAmount())));
         to.setBalance(to.getBalance().add(valueOf(tx.getAmount())));
-    }
 
+        Metrics.timer("Timer.Post.transfer", "milliseconds", String.valueOf(System.currentTimeMillis()-startTimer)).record(System.currentTimeMillis()-startTimer, TimeUnit.MILLISECONDS);
+
+    }
     @Override
     public Account updateAccount(Account a) {
+        long startTimer = System.currentTimeMillis();
+
         randomizedWait(2000);
         randomizeExceptionOrPanic(0.9f);
         Account account = getOrCreateAccount(a.getId());
         account.setBalance(a.getBalance());
         account.setCurrency(a.getCurrency());
         theBank.put(a.getId(), a);
+        Metrics.timer("Timer.Post.account", "milliseconds", String.valueOf(System.currentTimeMillis()-startTimer)).record(System.currentTimeMillis()-startTimer, TimeUnit.MILLISECONDS);
+
         return account;
     }
-
     @Override
     public BigDecimal balance(@PathVariable String accountId) {
         randomizedWait(10000);
@@ -56,11 +77,14 @@ class ReallyShakyBankingCoreSystemService implements BankingCoreSystmeService {
 
     @Override
     public Account getAccount(String accountNumber) {
+        long startTimer = System.currentTimeMillis();
         randomizedWait(5000);
         randomizeExceptionOrPanic(0.9f, 0.5f);
-        return getOrCreateAccount(accountNumber);
-    }
+        Metrics.timer("Timer.Get.account", "milliseconds", String.valueOf(System.currentTimeMillis()-startTimer)).record(System.currentTimeMillis()-startTimer, TimeUnit.MILLISECONDS);
 
+        return getOrCreateAccount(accountNumber);
+
+    }
     private Account getOrCreateAccount(String accountId) {
         if (theBank.get(accountId) == null) {
             Account a = new Account();
@@ -76,6 +100,8 @@ class ReallyShakyBankingCoreSystemService implements BankingCoreSystmeService {
 
     private void randomizeExceptionOrPanic(double probability, double panicProbability) {
         if (Math.random() <= probability) {
+            Metrics.counter("Counter.Malfunction.BackEndException", "TotalCrashes",
+                    String.valueOf(counter++)).increment();
             throw new BackEndException();
         }
         if (Math.random() <= panicProbability) {
