@@ -31,11 +31,6 @@ jobs:
 
       - name: 'Terraform Init'
         uses: hashicorp/terraform-github-actions/init@v0.4.0
-        env:
-          tf_actions_version: 0.12.13
-          tf_actions_working_dir: 'infra'
-          tf_actions_subcommand: 'init'
-          tf_actions_comment: true
 
       - name: Terraform Validate
         id: validate
