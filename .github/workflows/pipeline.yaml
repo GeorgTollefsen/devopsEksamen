@@ -27,7 +27,7 @@ jobs:
 
       - name: Terraform Init
         id: init
-        run: terraform init -from-module=infra
+        run: terraform init
 
       - name: Terraform Validate
         id: validate
