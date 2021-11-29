@@ -39,9 +39,10 @@ jobs:
 
       - name: Terraform Plan
         if: github.event_name == 'pull_request'
-        run: terraform plan
+        run: terraform plan -detailed-exitcode
         continue-on-error: true
 
+      - name: Update pull request
       - uses: actions/github-script@0.9.0
         if: github.event_name == 'pull_request'
         env:
