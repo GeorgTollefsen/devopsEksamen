@@ -38,14 +38,9 @@ import static org.apache.tomcat.jni.Thread.*;
 class ReallyShakyBankingCoreSystemService implements BankingCoreSystmeService {
 
     private Map<String, Account> theBank = new HashMap();
-    static long counter;
-
 
     @Override
     public void transfer(Transaction tx, String fromAccount, String toAccount) {
-        long startTimer = System.currentTimeMillis();
-
-
         randomizedWait(2000);
         randomizeExceptionOrPanic(0.7f);
         Account from = getOrCreateAccount(fromAccount);
