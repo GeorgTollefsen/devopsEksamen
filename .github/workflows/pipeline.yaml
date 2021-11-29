@@ -39,7 +39,7 @@ jobs:
 
       - name: Terraform Plan
         if: github.event_name == 'pull_request'
-        run: terraform plan -detailed-exitcode
+        run: terraform plan
         continue-on-error: true
 
       - name: Update pull request
@@ -73,7 +73,7 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve -input=false
 
   push_to_registry:
     name: Push Docker image to Docker Hub
