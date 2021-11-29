@@ -1,3 +1,4 @@
+#Denne koden er en justert versjon av den du har vist oss i timen
 FROM maven:3.6-jdk-11 as builder
 WORKDIR /app
 COPY pom.xml .
