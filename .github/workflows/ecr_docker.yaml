@@ -1,4 +1,4 @@
-name: Create and publish a Docker image
+name: Ecr og AWS
 
 on:
   push:
