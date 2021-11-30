@@ -1,5 +1,5 @@
 #Denne koden er en justert versjon av den du har vist oss i timen
-name: Terraform ci
+name: Terraform Workflow excl ecr
 
 on:
   push:
