@@ -78,7 +78,6 @@ jobs:
 
   push_to_registry:
     name: Push Docker image to Docker Hub
-    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
