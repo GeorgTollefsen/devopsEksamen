@@ -26,12 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc04c0da-1bcd-43d3-9c74-56f4e916c46e" name="Default Changelist" comment="s">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/pipeline.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/pipeline.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,25 +122,7 @@
       <updated>1637862521204</updated>
       <workItem from="1637862525885" duration="14209000" />
       <workItem from="1638101703135" duration="11681000" />
-      <workItem from="1638268826620" duration="2880000" />
-    </task>
-    <task id="LOCAL−00004" summary="endret på pipeline.yaml">
-      <created>1637865118637</created>
-      <option name="number" value="LOCAL−00004" />
-      <option name="presentableId" value="LOCAL−00004" />
-      <updated>1637865118637</updated>
-    </task>
-    <task id="LOCAL−00005" summary="endret på pipeline.yaml">
-      <created>1637865241461</created>
-      <option name="number" value="LOCAL−00005" />
-      <option name="presentableId" value="LOCAL−00005" />
-      <updated>1637865241461</updated>
-    </task>
-    <task id="LOCAL−00006" summary="endret på pipeline.yaml">
-      <created>1637865443415</created>
-      <option name="number" value="LOCAL−00006" />
-      <option name="presentableId" value="LOCAL−00006" />
-      <updated>1637865443415</updated>
+      <workItem from="1638268826620" duration="3215000" />
     </task>
     <task id="LOCAL−00007" summary="endret på pipeline.yaml">
       <created>1637866186848</created>
@@ -423,7 +400,25 @@
       <option name="presentableId" value="LOCAL−00052" />
       <updated>1638290485159</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL−00053" summary="s">
+      <created>1638291940438</created>
+      <option name="number" value="LOCAL−00053" />
+      <option name="presentableId" value="LOCAL−00053" />
+      <updated>1638291940438</updated>
+    </task>
+    <task id="LOCAL−00054" summary="s">
+      <created>1638292056235</created>
+      <option name="number" value="LOCAL−00054" />
+      <option name="presentableId" value="LOCAL−00054" />
+      <updated>1638292056235</updated>
+    </task>
+    <task id="LOCAL−00055" summary="s">
+      <created>1638292066273</created>
+      <option name="number" value="LOCAL−00055" />
+      <option name="presentableId" value="LOCAL−00055" />
+      <updated>1638292066273</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -513,11 +508,11 @@
       <screen x="0" y="0" width="1920" height="1152" />
     </state>
     <state x="440" y="150" key="SettingsEditor/-1920.-3.1920.1032/0.0.1920.1152@0.0.1920.1152" timestamp="1637862581172" />
-    <state x="552" y="309" key="Vcs.Push.Dialog.v2" timestamp="1638290487578">
+    <state x="552" y="309" key="Vcs.Push.Dialog.v2" timestamp="1638292069391">
       <screen x="0" y="0" width="1920" height="1152" />
     </state>
     <state x="-1368" y="274" key="Vcs.Push.Dialog.v2/-1920.-3.1920.1032/0.0.1920.1152@-1920.-3.1920.1032" timestamp="1638192708948" />
-    <state x="552" y="309" key="Vcs.Push.Dialog.v2/-1920.-3.1920.1032/0.0.1920.1152@0.0.1920.1152" timestamp="1638290487578" />
+    <state x="552" y="309" key="Vcs.Push.Dialog.v2/-1920.-3.1920.1032/0.0.1920.1152@0.0.1920.1152" timestamp="1638292069391" />
     <state x="769" y="490" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1637868557542">
       <screen x="0" y="0" width="1920" height="1152" />
     </state>
