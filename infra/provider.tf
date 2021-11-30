@@ -14,6 +14,7 @@ terraform {
 provider "aws" {
   region = "eu-west-1"
 }
+
 resource "aws_ecr_repository" "ecr" {
   name = "ecr_geto002_eksamen"
 }
