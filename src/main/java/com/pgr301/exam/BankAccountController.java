@@ -30,6 +30,8 @@ public class BankAccountController implements ApplicationListener<ApplicationRea
     @PostMapping(path = "/account/{fromAccount}/transfer/{toAccount}", consumes = "application/json", produces = "application/json")
     public void transfer(@RequestBody Transaction tx, @PathVariable String fromAccount, @PathVariable String toAccount) {
         long startTimer = System.currentTimeMillis();
+        //vi kapsulerer alle metodene i try catch for å kunne telle alle exceptions
+
         try{
             bankService.transfer(tx, fromAccount, toAccount);
             Metrics.timer("Timer.Post.transfer", "milliseconds",
@@ -48,6 +50,8 @@ public class BankAccountController implements ApplicationListener<ApplicationRea
     @PostMapping(path = "/account", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Account> updateAccount(@RequestBody Account a) {
         long startTimer = System.currentTimeMillis();
+        //vi kapsulerer alle metodene i try catch for å kunne telle alle exceptions
+
         try{
             bankService.updateAccount(a);
             Metrics.timer("Timer.Post.account", "milliseconds",
@@ -67,7 +71,7 @@ public class BankAccountController implements ApplicationListener<ApplicationRea
     @GetMapping(path = "/account/{accountId}", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Account> balance(@PathVariable String accountId) {
         long startTimer = System.currentTimeMillis();
-
+        //vi kapsulerer alle metodene i try catch for å kunne telle alle exceptions
         try {
             Account account = ofNullable(bankService.getAccount(accountId)).orElseThrow(AccountNotFoundException::new);
             Metrics.timer("Timer.Get.account", "milliseconds",
