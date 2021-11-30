@@ -1,9 +1,10 @@
 #Denne koden er en justert versjon av den du har vist oss i timen
-name: "Terraform"
+name: Terraform ci
 
 on:
   push:
     branches: [ main ]
+    paths:
       - 'infra/**'
   pull_request:
     branches: [ main ]
